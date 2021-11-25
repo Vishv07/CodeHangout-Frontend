@@ -1,11 +1,10 @@
 import React, { Fragment, useRef, useState } from "react";
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import CanvasDraw from "react-canvas-draw";
-import UndoIcon from "@material-ui/icons/Undo";
-import DeleteIcon from "@material-ui/icons/Delete";
 import localClasses from "./SketchPad.module.css";
 import { ChromePicker } from "react-color";
 import ColorLensIcon from "@material-ui/icons/ColorLens";
+import Whiteboard from "../WhiteBoard/Whiteboard";
 
 const SketchPad = (props) => {
   const saveableCanvas = useRef(CanvasDraw);
@@ -85,51 +84,7 @@ const SketchPad = (props) => {
         </div>
       </AppBar>
 
-      <CanvasDraw
-        ref={saveableCanvas}
-        canvasWidth={"auto"}
-        canvasHeight={"548px"}
-        brushRadius={3}
-        brushColor={brushColor}
-        catenaryColor={"#23A6F0"}
-        gridColor={"rgba(0, 180, 216, 0.1)"}
-      />
-      <AppBar position="static" style={{ backgroundColor: "black" }}>
-        <Toolbar>
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={() => {
-              saveableCanvas.current.clear();
-            }}
-            startIcon={<DeleteIcon />}
-            style={{
-              fontFamily: "poppins",
-              marginLeft: "auto",
-              fontWeight: "600",
-              color: "white",
-            }}
-          >
-            Clear
-          </Button>
-          <Button
-            variant="contained"
-            startIcon={<UndoIcon />}
-            style={{
-              fontFamily: "poppins",
-              marginLeft: "15px",
-              fontWeight: "600",
-              color: "white",
-              backgroundColor: "green",
-            }}
-            onClick={() => {
-              saveableCanvas.current.undo();
-            }}
-          >
-            UNDO
-          </Button>
-        </Toolbar>
-      </AppBar>
+      <Whiteboard color={brushColor} />
     </Fragment>
   );
 };
