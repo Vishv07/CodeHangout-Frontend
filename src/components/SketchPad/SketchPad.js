@@ -4,7 +4,7 @@ import CanvasDraw from "react-canvas-draw";
 import localClasses from "./SketchPad.module.css";
 import { ChromePicker } from "react-color";
 import ColorLensIcon from "@material-ui/icons/ColorLens";
-import Whiteboard from "../WhiteBoard/Whiteboard";
+import Whiteboard from "./WhiteBoard/Whiteboard";
 
 const SketchPad = (props) => {
   const saveableCanvas = useRef(CanvasDraw);

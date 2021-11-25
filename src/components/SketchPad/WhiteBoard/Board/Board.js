@@ -1,5 +1,5 @@
 import React from "react";
-import { socket } from "../../../services/socket";
+import { socket } from "../../../../services/socket";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import "./Board.css";
