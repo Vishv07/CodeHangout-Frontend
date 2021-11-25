@@ -1,0 +1,36 @@
+.Editor__navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: auto 5px;
+}
+
+.Menu__options {
+  font-family: "poppins";
+  font-size: 13px;
+}
+
+.loader {
+  color: #ffd500;
+  background-color: #000a29;
+  font-family: Consolas, Menlo, Monaco, monospace;
+  font-weight: bold;
+  font-size: 30vh;
+  opacity: 1;
+}
+.loader span {
+  display: inline-block;
+  animation: pulse 0.4s alternate infinite ease-in-out;
+}
+.loader span:nth-child(odd) {
+  animation-delay: 0.4s;
+}
+.arrow {
+  font-size: 200px;
+}
+@keyframes pulse {
+  to {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}

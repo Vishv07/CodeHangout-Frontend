@@ -1,0 +1,29 @@
+
+
+.ace_print-margin {
+	display: none;
+}
+
+/* scroll--bar styles */
+::-webkit-scrollbar {
+	width: 15px;
+	height: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: #000a29;
+	border-left: 5px solid #000a29;
+	border-right: 5px solid #000a29;
+}
+
+::-webkit-scrollbar-thumb {
+	background-image: linear-gradient(#23A6F0, #000a29);
+	border-left: 5px solid #000a29;
+	border-right: 5px solid #000a29;
+	border-radius: 30px;
+}
+
+ .Mui-disabled{ 
+	background-color: #6db8ff !important;
+	color: #000a29 !important;
+}

@@ -1,0 +1,23 @@
+.navButton_rooomID {
+    font-family: "poppins";
+    margin-left: auto;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+}
+
+.navButton_leave {
+    font-family: "poppins";
+    margin-left: 15px;
+    font-weight: 600;
+    color: white;
+    background-color: #fa1e0e;
+}
+
+.roomIDText {
+    white-space: "nowrap";
+    font-family: "poppins";
+    font-weight: 600;
+    color: white;
+    font-size: 14px;
+}
