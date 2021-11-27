@@ -137,7 +137,7 @@ const HangoutArea = (props) => {
                 }}
                 variant="contained"
                 size="large"
-                style={{ backgroundColor: "#f57c00" }}
+                style={{ backgroundColor: "#23A6F0" }}
               >
                 OK
               </Button>

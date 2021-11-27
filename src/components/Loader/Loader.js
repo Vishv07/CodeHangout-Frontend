@@ -1,13 +1,14 @@
 import React from "react";
 import localclasses from "./Loader.module.css";
-import { XlviLoader } from "react-awesome-loaders";
+import { SunspotLoader } from "react-awesome-loaders";
 function Loader() {
   return (
     <div className={localclasses.load}>
-      <XlviLoader
-        boxColors={["#FFD500", "#0077B6", "#00B4D8"]}
-        desktopSize={"128px"}
-        mobileSize={"100px"}
+      <SunspotLoader
+        gradientColors={["#23A6F0", "#23A6F0"]}
+        shadowColor={"#3730A3"}
+        desktopSize={"50px"}
+        mobileSize={"50px"}
       />
     </div>
   );

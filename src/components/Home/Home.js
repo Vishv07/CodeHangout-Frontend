@@ -25,12 +25,25 @@ const Home = (props) => {
   const skyLightCreateModal = useRef(SkyLight);
   const skyLightJoinModal = useRef(SkyLight);
   const [disabledName, setDisabledName] = useState(true);
+  const [isRoomIDPassed, setisRoomIDPassed] = useState(false);
   const [disabledRoomId, setDisabledRoomId] = useState(true);
   const createRoomButton = useRef(null);
   const joinRoomButton = useRef(null);
 
   useEffect(() => {
     props.reset();
+    let lastParam = window.location.href.split("/").pop();
+    let ID = lastParam.split("=")[1];
+    console.log(ID);
+    if (ID) {
+      if (validateRoomID(ID)) {
+        props.setRoomID(ID);
+        console.log(props.joinRoomId);
+        setisRoomIDPassed(true);
+        setDisabledRoomId(false);
+        skyLightJoinModal.current.show();
+      }
+    }
   }, []);
 
   const roomModal = {
@@ -195,7 +208,7 @@ const Home = (props) => {
                       component={Link}
                       ref={createRoomButton}
                       to={{
-                        pathname: props.joinRoomId,
+                        pathname: `/room/${props.joinRoomId}`,
                       }}
                       onClick={() => {
                         // it stores the details in localstorage which is used later
@@ -242,44 +255,46 @@ const Home = (props) => {
                     }}
                     style={{ color: "#000" }}
                   />
-
-                  <Typography
-                    style={{
-                      color: "#000",
-                      marginTop: "10px",
-                      marginBottom: "10px",
-                      fontSize: "2vh",
-                    }}
-                  >
-                    Enter Room Id
-                  </Typography>
-                  <TextField
-                    onChange={(event) => {
-                      props.setRoomID(event.target.value);
-                      validateRoomID(event.target.value)
-                        ? setDisabledRoomId(false)
-                        : setDisabledRoomId(true);
-                    }}
-                    onKeyPress={(ev) => {
-                      if (ev.key === "Enter") {
-                        ev.preventDefault();
-                        if (!disabledName && !disabledRoomId) {
-                          joinRoomButton.current.click();
-                        }
-                      }
-                    }}
-                    fullWidth
-                    id="outlined-basic"
-                    className={classes.root}
-                    InputProps={{ className: classes.input }}
-                    label="Enter Room ID"
-                    variant="outlined"
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                    placeholder="xxxx-yyyy-zzzz"
-                  />
-
+                  {!isRoomIDPassed && (
+                    <div>
+                      <Typography
+                        style={{
+                          color: "#000",
+                          marginTop: "10px",
+                          marginBottom: "10px",
+                          fontSize: "2vh",
+                        }}
+                      >
+                        Enter Room Id
+                      </Typography>
+                      <TextField
+                        onChange={(event) => {
+                          props.setRoomID(event.target.value);
+                          validateRoomID(event.target.value)
+                            ? setDisabledRoomId(false)
+                            : setDisabledRoomId(true);
+                        }}
+                        onKeyPress={(ev) => {
+                          if (ev.key === "Enter") {
+                            ev.preventDefault();
+                            if (!disabledName && !disabledRoomId) {
+                              joinRoomButton.current.click();
+                            }
+                          }
+                        }}
+                        fullWidth
+                        id="outlined-basic"
+                        className={classes.root}
+                        InputProps={{ className: classes.input }}
+                        label="Enter Room ID"
+                        variant="outlined"
+                        InputLabelProps={{
+                          shrink: true,
+                        }}
+                        placeholder="xxxx-yyyy-zzzz"
+                      />
+                    </div>
+                  )}
                   <br />
                   <br />
 
@@ -302,7 +317,7 @@ const Home = (props) => {
                       component={Link}
                       ref={joinRoomButton}
                       to={{
-                        pathname: props.joinRoomId,
+                        pathname: `/room/${props.joinRoomId}`,
                       }}
                       onClick={() => {
                         // it stores the details in localstorage which are later used

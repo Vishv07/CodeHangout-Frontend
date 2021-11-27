@@ -4,40 +4,20 @@ export const LangOptions = [
   "Python",
   "JAVA",
   "JavaScript",
-  "Kotlin",
-  "Clojure",
   "C#",
-  "COBOL",
-  "Erlang",
-  "FortRan",
   "Go",
-  "Groovy",
-  "PHP",
-  "R",
   "Ruby",
-  "SQL",
-  "Swift",
   "TypeScript",
 ];
 
 export const languages = [
   "c_cpp",
-  "clojure",
   "csharp",
-  "cobol",
-  "erlang",
-  "fortran",
   "golang",
-  "groovy",
   "java",
   "javascript",
-  "kotlin",
-  "php",
   "python",
-  "r",
   "ruby",
-  "sql",
-  "swift",
   "typescript",
 ];
 
@@ -151,3 +131,86 @@ int main()
 	}
 	return 0;
 }`;
+
+export const defaultLanguageCode = [
+  {
+    id: 54,
+    code: "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n\t// your code goes here\n\treturn 0;\n}\n",
+  },
+  {
+    id: 50,
+    code: "#include <stdio.h>\n\nint main(void) {\n\t// your code goes here\n\treturn 0;\n}\n",
+  },
+  {
+    id: 86,
+    code: "; your code goes here\n",
+  },
+  {
+    id: 62,
+    code: 'import java.util.*;\nimport java.lang.*;\nimport java.io.*;\n\n/* Name of the class has to be "Main" only if the class is public. */\nclass Solution\n{\n\tpublic static void main (String[] args) throws java.lang.Exception\n\t{\n\t\t// your code goes here\n\t}\n}\n',
+  },
+  {
+    id: 51,
+    code: "using System;\n\npublic class Test\n{\n\tpublic static void Main()\n\t{\n\t\t// your code goes here\n\t}\n}\n",
+  },
+  {
+    id: 71,
+    code: "# Start writing code from here\nprint('Hello World')",
+  },
+  {
+    id: 80,
+    code: "\n",
+  },
+  {
+    id: 72,
+    code: '# your code goes here\nputs "Hello World"',
+  },
+  {
+    id: 82,
+    code: "",
+  },
+  {
+    id: 83,
+    code: "",
+  },
+  {
+    id: 74,
+    code: "console.log('Hello World');",
+  },
+  {
+    id: 68,
+    code: "<?php\n\n// your code goes here\n",
+  },
+  {
+    id: 60,
+    code: 'package main\nimport "fmt"\n\nfunc main(){\n\t// your code goes here\n}\n',
+  },
+  {
+    id: 59,
+    code: "program TEST\n\t! your code goes here\n\tstop\nend\n",
+  },
+  {
+    id: 58,
+    code: "-module(prog).\n-export([main/0]).\n\nmain() ->\n\t% your code goes here\n\ttrue.\n",
+  },
+  {
+    id: 77,
+    code: '\t\t\tIDENTIFICATION DIVISION.\n\t\t\tPROGRAM-ID. hello.\n\t\t\tPROCEDURE DIVISION.\n\t\t\tDISPLAY "Hello World!".\n\t\t\tSTOP RUN.',
+  },
+  {
+    id: 74,
+    code: "",
+  },
+  {
+    id: 88,
+    code: "",
+  },
+  {
+    id: 78,
+    code: "",
+  },
+  {
+    id: 63,
+    code: "console.log('Hello World');",
+  },
+];

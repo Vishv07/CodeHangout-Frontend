@@ -17,6 +17,7 @@ import { getExtensionByLangCode } from "../../util/util";
 import { css } from "@emotion/react";
 import BeatLoader from "react-spinners/BeatLoader";
 import AceEditor from "react-ace";
+import axios from "axios";
 import "ace-builds/src-min-noconflict/ext-searchbox";
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-jsx";
@@ -51,6 +52,7 @@ import {
   langId,
   langExtensionDict,
   themes,
+  defaultLanguageCode,
 } from "./LanguageData";
 
 const useStyles = makeStyles((mutheme) => ({
@@ -115,22 +117,36 @@ const CodeEditor = (props) => {
     setPopup([true, "Code Copied Sucessfully"]);
   };
 
-  const fetchSharedCodeLink = async (content) => {
-    var response = await fetch("https://dpaste.com/api/v2/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: "content=" + encodeURIComponent(content),
+  const fetchSharedCodeLink = (content) => {
+    return new Promise((success, reject) => {
+      let body = "content=" + encodeURIComponent(content);
+      axios
+        .post("https://dpaste.com/api/v2/", body, {
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        })
+        .then((response) => {
+          console.log(response.data);
+          success(response.data);
+        })
+        .catch((error) => {
+          console.log("error " + error);
+          reject(error);
+        });
     });
-    return response.text();
   };
 
   const shareCode = (value) => {
     setModalIsOpen(true);
     setIsLoading(true);
-    fetchSharedCodeLink(value).then((url) => {
-      setIsLoading(false);
-      setshareURL(url);
-    });
+    fetchSharedCodeLink(value)
+      .then((url) => {
+        setIsLoading(false);
+        setshareURL(url);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setshareURL("Please try again Later! API LIMIT REACHED");
+      });
   };
 
   const handleCodeRun = () => {
@@ -329,6 +345,10 @@ const CodeEditor = (props) => {
                 value={props.currLang}
                 onChange={(e) => {
                   props.setLanguage(e.target.value);
+                  const newCode = defaultLanguageCode.filter(
+                    (x) => x.id == langId[e.target.value]
+                  );
+                  props.setCode(newCode[0].code);
                 }}
                 label="Language"
                 style={{ fontFamily: "poppins", color: "#ffffff" }}
