@@ -1,5 +1,10 @@
 import React, { Suspense } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Loader from "./components/Loader/Loader";
 import store from "./store/store";
 import { Provider } from "react-redux";
@@ -19,8 +24,9 @@ const App = () => {
         <Suspense fallback={<Loader />}>
           <SnackBar />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/:roomId" component={HangoutArea} />
+            <Route exact path="/home/" component={Home} />
+            <Route exact path="/room/:roomId" component={HangoutArea} />
+            <Redirect from="" to="/home/" />
           </Switch>
         </Suspense>
       </Router>
