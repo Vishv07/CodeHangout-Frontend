@@ -1,0 +1,13 @@
+.Title{
+    text-align: center;
+}
+
+.btnOk{
+    background-color: #23A6F0;
+}
+
+.mainDiv{
+    background-color: #F3F7F7;
+    font-family: 'poppins';
+    padding: 50px;
+}

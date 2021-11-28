@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import {
   Drawer,
@@ -9,6 +8,7 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
+import localclasses from "./Chat.module.css";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/chatActions.js";
 import * as UIactions from "../../store/actions/uiActions.js";
@@ -19,17 +19,7 @@ import CloseSharpIcon from "@material-ui/icons/CloseSharp";
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";
 
-const useStyles = makeStyles({
-  list: {
-    width: 400,
-  },
-  fullList: {
-    width: "auto",
-  },
-});
-
 const Chat = (props) => {
-  const classes = useStyles();
   const [emojiPickerState, SetEmojiPicker] = useState(false);
   const messagesEndRef = useRef(null);
   const [openDrawer, setopenDrawer] = useState(false);
@@ -140,46 +130,22 @@ const Chat = (props) => {
         onClick={toggleDrawer(true)}
         variant="contained"
         startIcon={<ForumIcon />}
-        color="primary"
-        style={{
-          fontFamily: "poppins",
-          backgroundColor: "black",
-          marginLeft: "15px",
-          fontWeight: "600",
-          color: "white",
-        }}
+        color="secondary"
+        className={localclasses.btnChatBox}
       >
         Chat Box
       </Button>
       <Drawer anchor={"right"} open={openDrawer} onClose={toggleDrawer(false)}>
         <CloseSharpIcon
-          style={{ padding: "5px", fontSize: "3em", cursor: "pointer" }}
+          className={localclasses.btnClose}
           onClick={toggleDrawer(false)}
         />
-        <div
-          className={classes.list}
-          style={{ display: "flex", flexDirection: "column" }}
-          role="presentation"
-        >
-          <div
-            style={{
-              paddingBottom: "70px",
-              marginBottom: "70px",
-              height: "90%",
-            }}
-          >
+        <div className={localclasses.list} role="presentation">
+          <div className={localclasses.msgDiv}>
             {<ChatMessage messages={props.messages} />}
             <div ref={messagesEndRef} />
           </div>
-          <div
-            style={{
-              bottom: "0",
-              position: "fixed",
-              paddingBottom: "20px",
-              paddingTop: "10px",
-              backgroundColor: "#fff",
-            }}
-          >
+          <div className={localclasses.clearDiv} style={{}}>
             <Grid container justify="center" spacing={3}>
               <Grid item xs={12}>
                 <Divider />
@@ -193,7 +159,7 @@ const Chat = (props) => {
                   variant="overline"
                   color="textSecondary"
                   align="justify"
-                  style={{ marginBottom: "4px" }}
+                  className={localclasses.isTypingText}
                   gutterBottom
                 >
                   <b>{props.typingUser}</b> is typing...
@@ -209,14 +175,7 @@ const Chat = (props) => {
                 <InsertEmoticonIcon
                   onClick={triggerPicker}
                   color="secondary"
-                  // className={classes.list}
-                  style={{
-                    display: "flex",
-                    alignSelf: "center",
-                    marginLeft: "5px",
-                    marginTop: "10px",
-                    cursor: "pointer",
-                  }}
+                  className={localclasses.emojiICon}
                   alignContent="center"
                 ></InsertEmoticonIcon>
               </Grid>
@@ -247,14 +206,7 @@ const Chat = (props) => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  className={classes.button}
-                  // size="large"
-                  style={{
-                    fontFamily: "poppins",
-                    marginLeft: "auto",
-                    fontWeight: "600",
-                    color: "white",
-                  }}
+                  className={localclasses.btnSend}
                   endIcon={<SendIcon />}
                   onClick={handleMessageSubmit}
                 >
@@ -263,7 +215,7 @@ const Chat = (props) => {
                 <Grid item xs={1}></Grid>
               </Grid>
             </Grid>
-            <Grid container spacing={3} style={{ paddingTop: "10px" }}>
+            <Grid container spacing={3} className={localclasses.emojiGrid}>
               <Grid item xs={1}></Grid>
               {emojiPicker}
               <Grid item xs={1}></Grid>

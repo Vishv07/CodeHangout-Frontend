@@ -86,14 +86,16 @@ export const executeCode = (LangID, CODE, INPUT) => (dispatch) => {
           .get("submissions/" + codeToken)
           .then((response) => {
             console.log(response);
-            if (response.data.stderr !== null) {
-              dispatch(setCodeIsCompiling(false));
-              dispatch(setCodeError(response.data.stderr));
-              dispatch(setIsError(true));
-            } else {
-              dispatch(setCodeOutput(response.data.stdout));
-              dispatch(setCodeIsCompiling(false));
-            }
+            dispatch(setCodeOutput(response.data.compile_output));
+            dispatch(setCodeIsCompiling(false));
+            // if (response.data.stderr !== null) {
+            //   dispatch(setCodeIsCompiling(false));
+            //   dispatch(setCodeError(response.data.stderr));
+            //   dispatch(setIsError(true));
+            // } else {
+            //   dispatch(setCodeOutput(response.data.stdout));
+            //   dispatch(setCodeIsCompiling(false));
+            // }
           })
           .catch(function (error) {
             dispatch(setCodeIsCompiling(false));
@@ -102,7 +104,7 @@ export const executeCode = (LangID, CODE, INPUT) => (dispatch) => {
             );
             dispatch(setIsError(true));
           });
-      }, 7000);
+      }, 6000);
     })
     .catch((err) => {
       dispatch(setCodeIsCompiling(false));

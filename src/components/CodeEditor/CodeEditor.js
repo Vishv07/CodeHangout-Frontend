@@ -168,19 +168,7 @@ const CodeEditor = (props) => {
   const IONavbar = (props) => {
     return (
       <AppBar position="static" style={{ backgroundColor: "black" }}>
-        <Typography
-          variant="h6"
-          style={{
-            fontFamily: "poppins",
-            color: "white",
-            marginRight: "auto",
-            marginTop: "auto",
-            marginBottom: "auto",
-            marginLeft: "auto",
-            fontWeight: "400",
-            padding: "3px 2px",
-          }}
-        >
+        <Typography variant="h6" className={localClasses.navBarHeading}>
           {props.type}
         </Typography>
       </AppBar>
@@ -253,14 +241,6 @@ const CodeEditor = (props) => {
     <Fragment>
       <Dialog fullWidth={true} maxWidth={"sm"} open={props.isCompiling}>
         <DialogTitle style={{ margin: "auto" }}>Compiling ...</DialogTitle>
-        {/* <div className={localClasses.loader}>
-          <div>
-            <span style={{ paddingLeft: "190px" }}>
-              <ShareIcon style={{ fontSize: "125px" }} />
-            </span>
-            <span className={localClasses.arrow}>&gt;</span>
-          </div>
-        </div> */}
       </Dialog>
       <Dialog maxWidth={"sm"} open={props.isError}>
         <DialogTitle>Oops Error Occured</DialogTitle>
@@ -310,20 +290,9 @@ const CodeEditor = (props) => {
           {fileHandleError}
         </Alert>
       </Snackbar>
-      <AppBar position="static" style={{ backgroundColor: "black" }}>
+      <AppBar position="static" className={localClasses.appBar}>
         <div className={`${localClasses.Editor__navbar} row`}>
-          <Typography
-            variant="h5"
-            style={{
-              fontFamily: "poppins",
-              color: "white",
-              marginRight: "auto",
-              marginTop: "auto",
-              marginBottom: "auto",
-              marginLeft: "30px",
-              fontWeight: "800",
-            }}
-          >
+          <Typography variant="h5" className={localClasses.codeEditorText}>
             &nbsp;Code<span style={{ color: "#23A6F0" }}> Editor</span>
           </Typography>
           <Toolbar>

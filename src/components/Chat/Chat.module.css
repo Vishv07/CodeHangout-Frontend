@@ -1,0 +1,83 @@
+.btnChatBox {
+    font-family: "poppins";
+    background-color: black !important;
+    margin-left: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+.btnClose{
+    padding: 5px;
+    font-size: 3em;
+    cursor: pointer; 
+}
+
+.list{
+    width: 400px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.msgDiv{
+    padding-bottom: 70px;
+    margin-bottom: 70px;
+    height: 90%;
+}
+
+.clearDiv{
+    bottom: 0px;
+    position: fixed;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    background-color: #fff;
+}
+
+.isTypingText{
+    margin-bottom: 4px;
+}
+
+.emojiICon{
+    display: flex;
+    align-self: center;
+    margin-left: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btnSend{
+    font-family: "poppins";
+    margin-left: auto;
+    font-weight: 600;
+    color: white;
+}
+
+.emojiGrid{
+    padding-top: 10px;
+}
+
+.listItemText{
+    border-radius: 10px;
+    padding: 10px;
+    color: rgb(62 53 53);
+    border: solid rgb(62 53 53) 1px;
+    text-align: center;
+    font-weight: bolder;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.participants{
+    font-family:"poppins";
+    margin-left: 15px;
+    font-weight: 600;
+    background-color: black;
+    color: white;
+}
+
+.closeIcon{
+    padding: 5px;
+    font-size: 3em;
+    cursor: pointer;
+}
