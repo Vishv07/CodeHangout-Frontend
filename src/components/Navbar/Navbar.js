@@ -45,7 +45,7 @@ const Navbar = (props) => {
     if (validateEmail(email)) {
       init(process.env.REACT_APP_USER_ID);
       var templateParams = {
-        message: `You have been invited for CodeHangout, To join head over to this link http://localhost:3000/home/?id=${props.roomId}`,
+        message: `You have been invited for CodeHangout, To join head over to this link https://codehangout.vercel.app/home/?id=${props.roomId}`,
         email: email,
         reply_to: "krishnakakadiya9@gmail.com",
       };
