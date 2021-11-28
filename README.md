@@ -38,6 +38,8 @@ git clone https://github.com/Vishv07/CodeHangout-Frontend.git
 
 ### To run the server, go to the server repository and execute following commands
 
+https://github.com/Vishv07/CH-Backend
+
 ```
 npm install
 npm start
