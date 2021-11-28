@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Code Hangout
 
-## Available Scripts
+### Solve problems together in real-time IDE and whiteboard with friends and colleagues. Join or create a room, invite your friends, and get ready to learn algorithms together. Chat and solve questions together. Once you're done, you can execute your code with our compilers!
 
-In the project directory, you can run:
+---
 
-### `npm start`
+# Deployed Version
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Frontend Deployment URL =** [https://codehangout.vercel.app/home/](https://codehangout.vercel.app/home/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Backend Deployment URL =** [https://codehangout.herokuapp.com/](https://codehangout.herokuapp.com/)
 
-### `npm test`
+# Features
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Solve Algorithms Collaboratively with your friends,
+- Chat with Your Friends while Coding
+- Visualize🎨 your Coding problem using Whiteboard
+- Can be helpful in the interviews
 
-### `npm run build`
+### How to Run Locally
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run the below command to clone the repo locally
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+git clone https://github.com/Vishv07/CodeHangout-Frontend.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### To run the server, go to the server folder in the backend directory and Run
 
-### `npm run eject`
+```
+npm install
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### this will run your express server in localhost:4000
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### To run the application,
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+create a new .env file and add following variables
 
-## Learn More
+```
+REACT_APP_SERVICE_ID= // email js service ID
+REACT_APP_USER_ID = // email js user ID
+REACT_APP_ONLINE_JUDGE_API= // judge api key
+REACT_APP_CODEHANGOUT_BACKEND_API= https://codehangout.herokuapp.com
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+and Run the application using below commands
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+//install all react dependencies
+npm install
 
-### Analyzing the Bundle Size
+//fire up the server
+npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### this will run your application in localhost:3000
