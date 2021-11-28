@@ -32,7 +32,7 @@ Run the below command to clone the repo locally
 git clone https://github.com/Vishv07/CodeHangout-Frontend.git
 ```
 
-### To run the server, go to the server folder in the backend directory and Run
+### To run the server, go to the server repository and execute following commands
 
 ```
 npm install
