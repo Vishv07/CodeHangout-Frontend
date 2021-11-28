@@ -215,6 +215,7 @@ const Home = (props) => {
                         localStorage.setItem("roomId", props.joinRoomId);
                         localStorage.setItem("name", props.name);
                         // isconnected is used to reconnect
+                        sessionStorage.clear();
                         sessionStorage.setItem("isconnected", true);
                       }}
                     >
@@ -323,6 +324,7 @@ const Home = (props) => {
                         // it stores the details in localstorage which are later used
                         localStorage.setItem("roomId", props.joinRoomId);
                         localStorage.setItem("name", props.name);
+                        sessionStorage.clear();
                         sessionStorage.setItem("isconnected", true);
                       }}
                     >

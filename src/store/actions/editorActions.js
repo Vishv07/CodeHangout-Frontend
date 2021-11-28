@@ -86,21 +86,24 @@ export const executeCode = (LangID, CODE, INPUT) => (dispatch) => {
           .get("submissions/" + codeToken)
           .then((response) => {
             console.log(response);
-            dispatch(setCodeOutput(response.data.compile_output));
-            dispatch(setCodeIsCompiling(false));
-            // if (response.data.stderr !== null) {
-            //   dispatch(setCodeIsCompiling(false));
-            //   dispatch(setCodeError(response.data.stderr));
-            //   dispatch(setIsError(true));
-            // } else {
-            //   dispatch(setCodeOutput(response.data.stdout));
-            //   dispatch(setCodeIsCompiling(false));
-            // }
+            dispatch(setCodeOutput(null));
+            if (
+              response.data.compile_output == null &&
+              response.data.stderr == null
+            ) {
+              dispatch(setCodeOutput(response.data.stdout));
+              dispatch(setCodeIsCompiling(false));
+            } else {
+              dispatch(setCodeOutput(response.data.compile_output));
+              dispatch(setCodeIsCompiling(false));
+            }
           })
           .catch(function (error) {
             dispatch(setCodeIsCompiling(false));
             dispatch(
-              setCodeError("Compilation Error: " + error.response.data.error)
+              setCodeError(
+                "Compilation Error: There my be some issues in the syntax or the language"
+              )
             );
             dispatch(setIsError(true));
           });
