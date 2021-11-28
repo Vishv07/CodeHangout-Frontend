@@ -41,6 +41,7 @@ git clone https://github.com/Vishv07/CodeHangout-Frontend.git
 ```
 npm install
 npm start
+
 ```
 
 #### this will run your express server in localhost:4000
