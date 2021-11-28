@@ -2,7 +2,18 @@
 
 ### Solve problems together in real-time IDE and whiteboard with friends and colleagues. Join or create a room, invite your friends, and get ready to learn algorithms together. Chat and solve questions together. Once you're done, you can execute your code with our compilers!
 
+
+![image](https://user-images.githubusercontent.com/37216460/143730690-67a449c0-5523-4250-8154-74e3cc767105.png)
+
+## Invite your Friends via HangoutInvite✉️
+
+![image](https://user-images.githubusercontent.com/37216460/143730738-1bcd43ab-73d1-406e-acb2-291220b9b7b1.png)
+
 ---
+
+# Notion Docs
+
+https://secret-radio-dc2.notion.site/Code-Hangout-f16fec67886344bfaba824186e46927c
 
 # Deployed Version
 
@@ -25,7 +36,7 @@ Run the below command to clone the repo locally
 git clone https://github.com/Vishv07/CodeHangout-Frontend.git
 ```
 
-### To run the server, go to the server folder in the backend directory and Run
+### To run the server, go to the server repository and execute following commands
 
 ```
 npm install
