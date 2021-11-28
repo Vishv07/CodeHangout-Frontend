@@ -11,6 +11,10 @@
 
 ---
 
+# Notion Docs
+
+https://www.notion.so/Code-Hangout-f16fec67886344bfaba824186e46927c
+
 # Deployed Version
 
 **Frontend Deployment URL =** [https://codehangout.vercel.app/home/](https://codehangout.vercel.app/home/)
