@@ -13,7 +13,7 @@
 
 # Notion Docs
 
-https://www.notion.so/Code-Hangout-f16fec67886344bfaba824186e46927c
+https://secret-radio-dc2.notion.site/Code-Hangout-f16fec67886344bfaba824186e46927c
 
 # Deployed Version
 
