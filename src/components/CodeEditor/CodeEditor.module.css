@@ -10,6 +10,60 @@
   font-size: 13px;
 }
 
+.navBarHeading{
+  font-family: "poppins";
+  color: white; 
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  font-weight: 400;
+  padding: 3px 2px;
+}
+
+.codeEditorText{
+  font-family: "poppins";
+  color: white;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 30px;
+  font-weight: 800;
+}
+
+.appBar {
+  background-color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .loader {
   color: #ffd500;
   background-color: #000a29;

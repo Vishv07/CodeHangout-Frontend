@@ -9,6 +9,7 @@ import {
   Drawer,
   List,
 } from "@material-ui/core";
+import localclasses from "./Chat.module.css";
 import { makeStyles } from "@material-ui/core/styles";
 import CloseSharpIcon from "@material-ui/icons/CloseSharp";
 import { connect } from "react-redux";
@@ -40,18 +41,7 @@ function ParticipantsList(props) {
               </Avatar>
             </ListItemAvatar>
             <ListItemText
-              style={{
-                borderRadius: "10px",
-                padding: "10px",
-                color: "rgb(62 53 53)",
-                border: "solid rgb(62 53 53) 1px",
-                textAlign: "center",
-                fontWeight: "bolder",
-                wordWrap: "break-word",
-                overflowWrap: "break-word",
-                hyphens: "auto",
-                WebkitHyphens: "auto",
-              }}
+              className={localclasses.listItemText}
               primary={name}
             />
           </ListItem>
@@ -64,15 +54,9 @@ function ParticipantsList(props) {
       <Button
         onClick={() => setOpenList(true)}
         variant="contained"
-        color="primary"
+        color="secondary"
+        className={localclasses.participants}
         startIcon={<GroupIcon />}
-        style={{
-          fontFamily: "poppins",
-          marginLeft: "15px",
-          fontWeight: "600",
-          backgroundColor: "black",
-          color: "white",
-        }}
       >
         Participants [ {Object.keys(users).length} ]
       </Button>
@@ -82,7 +66,7 @@ function ParticipantsList(props) {
         onClose={() => setOpenList(false)}
       >
         <CloseSharpIcon
-          style={{ padding: "5px", fontSize: "3em", cursor: "pointer" }}
+          className={localclasses.closeIcon}
           onClick={() => setOpenList(false)}
         />
         <div

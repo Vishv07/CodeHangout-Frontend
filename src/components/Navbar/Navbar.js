@@ -106,7 +106,7 @@ const Navbar = (props) => {
             onClick={() =>
               Copytext(
                 `Hi there! You have been invited by ${props.name} to join Code Hangout. 
-                \nClick on this link - https://codehangout.vercel.app/home/id=${props.roomId}`
+                \nClick on this link - https://codehangout.vercel.app/home/?id=${props.roomId}`
               )
             }
             color="secondary"

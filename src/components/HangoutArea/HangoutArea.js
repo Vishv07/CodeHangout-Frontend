@@ -7,6 +7,7 @@ import {
   DialogTitle,
   Grid,
 } from "@material-ui/core";
+import localclasses from "./HangoutArea.module.css";
 import CodeEditor from "../CodeEditor/CodeEditor.js";
 import SketchPad from "../SketchPad/SketchPad";
 import { Redirect } from "react-router-dom";
@@ -124,7 +125,7 @@ const HangoutArea = (props) => {
       ) : (
         <Fragment>
           <Dialog fullWidth={true} maxWidth={"xs"} open={popup}>
-            <DialogTitle style={{ textAlign: "center" }}>
+            <DialogTitle className={localclasses.Title}>
               {popupMessage}
             </DialogTitle>
             <DialogActions>
@@ -137,20 +138,14 @@ const HangoutArea = (props) => {
                 }}
                 variant="contained"
                 size="large"
-                style={{ backgroundColor: "#23A6F0" }}
+                className={localclasses.btnOk}
               >
                 OK
               </Button>
             </DialogActions>
           </Dialog>
           <Navbar name={props.Username} roomId={roomId} socket={socket} />
-          <div
-            style={{
-              backgroundColor: "#F3F7F7",
-              fontFamily: "poppins",
-              padding: "50px",
-            }}
-          >
+          <div className={localclasses.mainDiv}>
             <Grid container spacing={5}>
               <Grid item xs={12} sm={12} md={props.isFocusMode ? 12 : 6}>
                 <CodeEditor socket={socket} />
@@ -162,7 +157,6 @@ const HangoutArea = (props) => {
           </div>
         </Fragment>
       )}
-      {/* <Footer /> */}
     </Fragment>
   );
 };
